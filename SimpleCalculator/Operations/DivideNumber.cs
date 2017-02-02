@@ -8,5 +8,10 @@ namespace SimpleCalculator
 {
     public class DivideNumber
     {
+        public void DivideStuff(int firstStuff, int secondStuff)
+        {
+            Console.WriteLine("The division of numbers: {0}", (firstStuff / secondStuff));
+        }
+
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
-    public class AddNumber
-    {
+        public class AddNumber 
+        {
+            public void AddStuff(int firstStuff, int secondStuff)
+            {
+                Console.WriteLine("The sum of numbers: {0}", (firstStuff + secondStuff));
+            }
+           
+        }
     }
-}
+
