@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SimpleCalculator.Operations;
 
 namespace SimpleCalculator.Tests
 {
@@ -7,8 +8,12 @@ namespace SimpleCalculator.Tests
     public class MultiTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void EnsureTenMultiplyOne()
         {
+            MultiplyNumber multiplynumber = new MultiplyNumber();
+            int expectedResult = 10;
+            int actualResult = multiplynumber.MultiplyStuff(10, 1);
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }

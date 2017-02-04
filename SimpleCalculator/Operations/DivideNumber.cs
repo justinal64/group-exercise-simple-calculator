@@ -8,9 +8,10 @@ namespace SimpleCalculator.Operations
 {
     public class DivideNumber
     {
-        public void DivideStuff(int firstStuff, int secondStuff)
+        public int DivideStuff(int firstStuff, int secondStuff)
         {
             Console.WriteLine("The quotient (maybe? Is that it?) of your numbers is: {0}", (firstStuff / secondStuff));
+            return firstStuff / secondStuff;
         }
     }
 }
