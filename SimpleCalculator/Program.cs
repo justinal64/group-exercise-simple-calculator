@@ -23,6 +23,15 @@ namespace SimpleCalculator
                 {
                     break;
                 }
+                /*
+                 Write regex command to test for, (x=3, x "checks for value", x+1,) 
+                 Create new files for when these conditions are met."think of an operations type folder"
+                 Call appropriate file based on user submission. 
+                 Key value pair to store variables.
+                 Convert to work with existing methods.
+                 
+             
+                 */
 
                 Regex r1 = new Regex(@"^(\d+)\s*([+-/%*])\s*(\d+)$");
 
