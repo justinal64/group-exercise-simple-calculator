@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquationConverter.cs" />
     <Compile Include="Operations\AddNumber.cs" />
     <Compile Include="Operations\DivideNumber.cs" />
-    <Compile Include="EquationConverter.cs" />
     <Compile Include="Operations\ModulusizeNumber.cs" />
     <Compile Include="Operations\MultiplyNumber.cs" />
     <Compile Include="Program.cs" />

@@ -8,9 +8,10 @@ namespace SimpleCalculator.Operations
 {
     public class MultiplyNumber
     {
-        public void MultiplyStuff(int firstStuff, int secondStuff)
+        public int MultiplyStuff(int firstStuff, int secondStuff)
         {
             Console.WriteLine("The product of your numbers is: {0}", (firstStuff * secondStuff));
+            return firstStuff * secondStuff;
         }
     }
 }

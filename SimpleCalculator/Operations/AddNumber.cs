@@ -8,9 +8,10 @@ namespace SimpleCalculator.Operations
 {
     public class AddNumber
     {
-        public void AddStuff(int firstStuff, int secondStuff)
+        public int AddStuff(int firstStuff, int secondStuff)
         {
-            Console.WriteLine("The sum of your numbers is: {0}", (firstStuff + secondStuff));       
+            Console.WriteLine("The sum of your numbers is: {0}", (firstStuff + secondStuff));
+            return firstStuff + secondStuff;
         }
     }
 }

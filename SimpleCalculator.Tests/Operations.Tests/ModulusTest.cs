@@ -5,14 +5,14 @@ using SimpleCalculator.Operations;
 namespace SimpleCalculator.Tests
 {
     [TestClass]
-    public class SubTest
+    public class ModulusTest
     {
         [TestMethod]
-        public void EnsureTenMinusOne()
+        public void EnsureFourModulusTwo()
         {
-            SubtractNumber subtractnumber = new SubtractNumber();
-            int expectedResult = 9;
-            int actualResult = subtractnumber.SubtractStuff(10, 1);
+            ModulusizeNumber modulusizenumber = new ModulusizeNumber();
+            int expectedResult = 0;
+            int actualResult = modulusizenumber.ModulusizeStuff(4, 2);
             Assert.AreEqual(expectedResult, actualResult);
         }
     }

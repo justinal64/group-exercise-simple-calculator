@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimpleCalculator.Operations
 {
-    class ModulusizeNumber
+    public class ModulusizeNumber
     {
-        public void ModulusizeStuff(int firstStuff, int secondStuff)
+        public int ModulusizeStuff(int firstStuff, int secondStuff)
         {
             Console.WriteLine("The modulus (aka \"remainder\" for you laypeople) of your numbers is: {0}", (firstStuff % secondStuff));
+            return firstStuff % secondStuff;
         }
     }
 }
