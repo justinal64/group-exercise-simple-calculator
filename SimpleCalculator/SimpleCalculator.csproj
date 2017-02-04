@@ -46,6 +46,7 @@
     <Compile Include="Operations\AddNumber.cs" />
     <Compile Include="Operations\DivideNumber.cs" />
     <Compile Include="Integer.cs" />
+    <Compile Include="Operations\Modulus.cs" />
     <Compile Include="Operations\MultiplyNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

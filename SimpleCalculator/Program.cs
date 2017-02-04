@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace SimpleCalculator
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -29,6 +28,9 @@ namespace SimpleCalculator
 
                 // Match the input and write results
                 Match match = r1.Match(input);
+
+                
+
                 if (match.Success)
                 {
                     string firstValue = match.Groups[1].Value;
@@ -38,6 +40,11 @@ namespace SimpleCalculator
                     Console.WriteLine("First value = {0}", firstValue);
                     Console.WriteLine("Operator =  {0}", operatorUsed);
                     Console.WriteLine("Second value =  {0}", secondValue);
+
+                    EquationConverter conversion = new EquationConverter();
+                    conversion.ConvertString(firstValue, operatorUsed, secondValue);
+
+
                 }
                 else
                 {

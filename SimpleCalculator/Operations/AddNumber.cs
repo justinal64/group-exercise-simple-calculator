@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleCalculator
+namespace SimpleCalculator.Operations
 {
-        public class AddNumber 
+    public class AddNumber
+    {
+        public void AddStuff(int firstStuff, int secondStuff)
         {
-            public void AddStuff(int firstStuff, int secondStuff)
-            {
-                Console.WriteLine("The sum of numbers: {0}", (firstStuff + secondStuff));
-            }
-           
+            Console.WriteLine("The sum of your numbers is: {0}", (firstStuff + secondStuff));
         }
     }
+}
 
