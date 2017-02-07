@@ -11,6 +11,8 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
+            int lastA = 0;
+            string lastQ = "";
             int x = 0;
             while(true)
             {
@@ -39,17 +41,22 @@ namespace SimpleCalculator
                 Match match = r1.Match(input);
                
                 if (match.Success)
-                {
+                { 
                     string firstValue = match.Groups[1].Value;
                     string operatorUsed = match.Groups[2].Value;
                     string secondValue = match.Groups[3].Value;
+                    // store the last equation
+                    lastQ = $"{firstValue} {operatorUsed} {secondValue}";
+
                     /*
                     Console.WriteLine("First value = {0}", firstValue);
                     Console.WriteLine("Operator =  {0}", operatorUsed);
                     Console.WriteLine("Second value =  {0}", secondValue);
                     */
                     EquationConverter conversion = new EquationConverter();
-                    conversion.ConvertString(firstValue, operatorUsed, secondValue);
+                    lastA = conversion.MathRouter(firstValue, operatorUsed, secondValue);
+                    Console.WriteLine(lastA);
+
                 }
                 else
                 {
