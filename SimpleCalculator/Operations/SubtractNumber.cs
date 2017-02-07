@@ -10,7 +10,6 @@ namespace SimpleCalculator.Operations
     {
         public int SubtractStuff(int firstStuff, int secondStuff)
         {
-            Console.WriteLine("The difference of your numbers is: {0}", (firstStuff - secondStuff));
             return firstStuff - secondStuff;
         }
     }

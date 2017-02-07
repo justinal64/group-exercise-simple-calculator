@@ -10,7 +10,6 @@ namespace SimpleCalculator.Operations
     {
         public int AddStuff(int firstStuff, int secondStuff)
         {
-            Console.WriteLine("The sum of your numbers is: {0}", (firstStuff + secondStuff));
             return firstStuff + secondStuff;
         }
     }

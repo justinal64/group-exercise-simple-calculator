@@ -49,7 +49,7 @@ namespace SimpleCalculator
                     Console.WriteLine("Second value =  {0}", secondValue);
                     */
                     EquationConverter conversion = new EquationConverter();
-                    conversion.ConvertString(firstValue, operatorUsed, secondValue);
+                    conversion.MathRouter(firstValue, operatorUsed, secondValue);
                 }
                 else
                 {
