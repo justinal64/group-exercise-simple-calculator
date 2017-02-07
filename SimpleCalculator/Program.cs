@@ -37,7 +37,15 @@ namespace SimpleCalculator
 
                 // Match the input and write results
                 Match match = r1.Match(input);
-               
+                Regex r2 = new Regex(@"^([a-zA-Z])\s*=\s*(\d*)$");
+                Match match1 = r2.Match(input);
+                if (match1.Success)
+                {
+                    string charEntered = match1.Groups[1].Value;
+                    string valEntered = match1.Groups[2].Value;
+                    Console.WriteLine($"charEntered={charEntered} valEntered={valEntered}");
+                }
+
                 if (match.Success)
                 {
                     string firstValue = match.Groups[1].Value;
@@ -59,3 +67,5 @@ namespace SimpleCalculator
         }
     }
 }
+
+
