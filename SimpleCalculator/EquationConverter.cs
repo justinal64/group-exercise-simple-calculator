@@ -61,7 +61,7 @@ namespace SimpleCalculator
             LastAnswer(result);
             // Set the last question 
             LastQuestion($"{firstInt} {operatorChar} {secondInt}");
-
+            DisplayAnswer(result, $"{firstInt} {operatorChar} {secondInt}");
             return result;
         }
         
@@ -77,6 +77,11 @@ namespace SimpleCalculator
             lastQ = question;
             Console.WriteLine("lastQ = {0}", lastQ);
             return lastQ;
+        }
+
+        public void DisplayAnswer(int answer, string question)
+        {
+            Console.WriteLine($"{question} = {answer}");
         }
     }
 }

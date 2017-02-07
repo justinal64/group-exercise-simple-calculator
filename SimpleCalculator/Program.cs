@@ -28,7 +28,9 @@ namespace SimpleCalculator
                  Create new files for when these conditions are met."think of an operations type folder"
                  Call appropriate file based on user submission. 
                  Key value pair to store variables.
-                 Convert to work with existing methods
+                 Convert to work with existing methods.
+                 
+             
                  */
 
                 Regex r1 = new Regex(@"^(\d+)\s*([+-/%*])\s*(\d+)$");
@@ -37,17 +39,17 @@ namespace SimpleCalculator
                 Match match = r1.Match(input);
                
                 if (match.Success)
-                { 
+                {
                     string firstValue = match.Groups[1].Value;
                     string operatorUsed = match.Groups[2].Value;
                     string secondValue = match.Groups[3].Value;
-
                     /*
                     Console.WriteLine("First value = {0}", firstValue);
                     Console.WriteLine("Operator =  {0}", operatorUsed);
                     Console.WriteLine("Second value =  {0}", secondValue);
                     */
-                    EquationConverter conversion = new EquationConverter()
+                    EquationConverter conversion = new EquationConverter();
+                    conversion.MathRouter(firstValue, operatorUsed, secondValue);
                 }
                 else
                 {

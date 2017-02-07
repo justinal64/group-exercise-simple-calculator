@@ -10,7 +10,6 @@ namespace SimpleCalculator.Operations
     {
         public int MultiplyStuff(int firstStuff, int secondStuff)
         {
-            Console.WriteLine("The product of your numbers is: {0}", (firstStuff * secondStuff));
             return firstStuff * secondStuff;
         }
     }
