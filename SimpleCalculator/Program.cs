@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using SimpleCalculator.Constants;
+
 
 namespace SimpleCalculator
 {
@@ -28,25 +30,38 @@ namespace SimpleCalculator
                  Create new files for when these conditions are met."think of an operations type folder"
                  Call appropriate file based on user submission. 
                  Key value pair to store variables.
-                 Convert to work with existing methods.
-                 
-             
+                 Convert to work with existing methods.            
                  */
 
+                // Check for 1 + 1 or 1+1
                 Regex r1 = new Regex(@"^(\d+)\s*([+-/%*])\s*(\d+)$");
-
-                // Match the input and write results
                 Match match = r1.Match(input);
-                Regex r2 = new Regex(@"^([a-zA-Z])\s*=\s*(\d*)$");
-                Match match1 = r2.Match(input);
-                if (match1.Success)
+                
+                // Check for a single char
+                Regex r2 = new Regex(@"^([a-zA-Z])$");
+                Match match2 = r2.Match(input);
+               
+                // Check for x = 1
+                Regex r3 = new Regex(@"^([a-zA-Z])\s*=\s*(\d*)$");
+                Match match3 = r3.Match(input);
+                // If x sucess = true
+                if (match2.Success)
                 {
-                    string charEntered = match1.Groups[1].Value;
-                    string valEntered = match1.Groups[2].Value;
+                    char charEntered = Convert.ToChar(match2.Groups[1].Value);
+                    Console.WriteLine($"charEntered={charEntered}");
+                    Constants.Constants constant = new Constants.Constants();
+                    constant.AddConstantstoDictionary();
+                    constant.TestForValueInDictionary(charEntered);
+                }
+                // If x = 1 success = true
+                else if (match3.Success)
+                {
+                    string charEntered = match3.Groups[1].Value;
+                    string valEntered = match3.Groups[2].Value;
                     Console.WriteLine($"charEntered={charEntered} valEntered={valEntered}");
                 }
-
-                if (match.Success)
+                // If 1 + 1 or 1+1 success = true
+                else if (match.Success)
                 {
                     string firstValue = match.Groups[1].Value;
                     string operatorUsed = match.Groups[2].Value;

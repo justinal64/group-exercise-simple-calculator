@@ -12,17 +12,6 @@ namespace SimpleCalculator
         public string lastQ { get; set; }
         public int lastA { get; set; }
 
-        //public void ConvertString(string a, string op, string b)
-        //{
-        //    int firstNumberInEquation = Convert.ToInt32(a);
-
-        //    char operatorInEquation = Convert.ToChar(op);
-
-        //    int secondNumberInEquation = Convert.ToInt32(b);
-
-        //    MathRouter(firstNumberInEquation, operatorInEquation, secondNumberInEquation);
-        //}
-
         public int MathRouter(string firstInt, string operatorChar, string secondInt)
         {
             int firstNumberInEquation = Convert.ToInt32(firstInt);
