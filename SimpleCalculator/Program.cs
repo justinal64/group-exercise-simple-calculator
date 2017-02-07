@@ -11,8 +11,6 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            int lastA = 0;
-            string lastQ = "";
             int x = 0;
             while(true)
             {
@@ -30,9 +28,7 @@ namespace SimpleCalculator
                  Create new files for when these conditions are met."think of an operations type folder"
                  Call appropriate file based on user submission. 
                  Key value pair to store variables.
-                 Convert to work with existing methods.
-                 
-             
+                 Convert to work with existing methods
                  */
 
                 Regex r1 = new Regex(@"^(\d+)\s*([+-/%*])\s*(\d+)$");
@@ -45,18 +41,13 @@ namespace SimpleCalculator
                     string firstValue = match.Groups[1].Value;
                     string operatorUsed = match.Groups[2].Value;
                     string secondValue = match.Groups[3].Value;
-                    // store the last equation
-                    lastQ = $"{firstValue} {operatorUsed} {secondValue}";
 
                     /*
                     Console.WriteLine("First value = {0}", firstValue);
                     Console.WriteLine("Operator =  {0}", operatorUsed);
                     Console.WriteLine("Second value =  {0}", secondValue);
                     */
-                    EquationConverter conversion = new EquationConverter();
-                    lastA = conversion.MathRouter(firstValue, operatorUsed, secondValue);
-                    Console.WriteLine(lastA);
-
+                    EquationConverter conversion = new EquationConverter()
                 }
                 else
                 {
