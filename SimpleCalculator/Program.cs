@@ -34,7 +34,13 @@ namespace SimpleCalculator
                  */
 
                 Regex r1 = new Regex(@"^(\d+)\s*([+-/%*])\s*(\d+)$");
+                Regex r2 = new Regex(@"^[a-zA-Z]\s*=\s*\d*$");
 
+                Match match1 = r2.Match(input);
+                if(match1.Success)
+                {
+                    Console.WriteLine("Congratz that worked!!!!");
+                }
                 // Match the input and write results
                 Match match = r1.Match(input);
                
