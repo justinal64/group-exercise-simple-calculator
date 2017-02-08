@@ -11,11 +11,9 @@ namespace SimpleCalculatorTests
         public void EnsureInDictionary()
         {
             StoredConstants constants = new StoredConstants();
-            constants.AddConstantsToDictionary();
             bool expectedResult = true;
-            bool actualResult = constants.IsValueInDictionary('c');
+            bool actualResult = constants.AddConstantsToDictionary('c', 4);
             Assert.AreEqual(expectedResult, actualResult);
-
         }
     }
 }

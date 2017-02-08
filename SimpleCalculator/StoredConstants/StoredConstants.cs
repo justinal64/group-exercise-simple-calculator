@@ -10,6 +10,7 @@ namespace SimpleCalculator.StoredConstants
     {
         Dictionary<char, int> constantDictionary = new Dictionary<char, int>();
 
+        // Used to test for values in Dictionary
         public void AddConstantsToDictionary()
         {
             constantDictionary.Add('a', 2);
@@ -17,7 +18,7 @@ namespace SimpleCalculator.StoredConstants
             constantDictionary.Add('c', 100);
         }
 
-        public void AddConstantsToDictionary(char userKey, int userValue)
+        public bool AddConstantsToDictionary(char userKey, int userValue)
         {
             /* a side effect of using the .Add method is that it throws an error 
              if the key already exists, so we don't need a seperate method  
@@ -26,40 +27,29 @@ namespace SimpleCalculator.StoredConstants
             try
             {
                 constantDictionary.Add(userKey, userValue);
-                Console.WriteLine($"{userKey} = {userValue} added to the dictionary!");
+                return true;
             }
             catch(Exception)
             {
                 Console.WriteLine("Sorry that variable already exists");
-            }
-        }
-
-        public bool IsValueInDictionary(char inDictionary)
-        {
-            if (constantDictionary.ContainsKey(inDictionary))
-            {
-                return true;
-            }
-            else
-            {
                 return false;
             }
         }
 
-        public string GetValueFromDictionary(char key)
+        //public bool IsValueInDictionary(char inDictionary)
+        //{
+        //    if (constantDictionary.ContainsKey(inDictionary))
+        //        return true;
+        //    else
+        //        return false;
+        //}
+
+        public void GetValueFromDictionary(char key)
         {
             if(constantDictionary.ContainsKey(key))
-            {
-                //string value = constantDictionary[key];
                 Console.WriteLine($"The Value of {key} is {constantDictionary[key]}");
-            }
             else
-            {
                 Console.WriteLine("Sorry that value is not in the Dictionary");
-            }
-            return "Test";
         }
-
-
     }
 }
