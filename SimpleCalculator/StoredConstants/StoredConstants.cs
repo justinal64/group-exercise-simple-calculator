@@ -18,21 +18,21 @@ namespace SimpleCalculator.StoredConstants
             constantDictionary.Add('c', 100);
         }
 
-        public bool AddConstantsToDictionary(char userKey, int userValue)
+        /*  a side effect of using the .Add method is that it throws an error 
+            if the key already exists, so we don't need a seperate method  
+            checking if the key exist
+        */
+        public Dictionary<char, int> AddConstantsToDictionary(char userKey, int userValue)
         {
-            /* a side effect of using the .Add method is that it throws an error 
-             if the key already exists, so we don't need a seperate method  
-             checking if the key exist
-             */
             try
             {
                 constantDictionary.Add(userKey, userValue);
-                return true;
+                return constantDictionary;
             }
             catch(Exception)
             {
                 Console.WriteLine("Sorry that variable already exists");
-                return false;
+                return constantDictionary;
             }
         }
 

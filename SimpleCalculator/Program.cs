@@ -24,6 +24,7 @@ namespace SimpleCalculator
                 string input = Console.ReadLine();
                 if (input.ToLower() == "quit" || input.ToLower() == "exit")
                 {
+                    Console.WriteLine("Bye!");
                     break;
                 }
 

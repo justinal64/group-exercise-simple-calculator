@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleCalculator.StoredConstants;
+using System.Collections.Generic;
 
 namespace SimpleCalculatorTests
 {
@@ -8,12 +9,15 @@ namespace SimpleCalculatorTests
     public class StoredConstantsTest
     {
         [TestMethod]
-        public void EnsureInDictionary()
+        public void EnsureValueCanBeStored()
         {
             StoredConstants constants = new StoredConstants();
-            bool expectedResult = true;
-            bool actualResult = constants.AddConstantsToDictionary('c', 4);
-            Assert.AreEqual(expectedResult, actualResult);
+
+            Dictionary<char, int> expectedDictionary = new Dictionary<char, int>();
+            expectedDictionary.Add('c', 21);
+
+            Dictionary<char, int> actualDictionary = constants.AddConstantsToDictionary('c', 21);
+            CollectionAssert.AreEqual(expectedDictionary, actualDictionary);
         }
     }
 }
