@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using SimpleCalculator.StoredConstants;
 
 namespace SimpleCalculator
 {
@@ -41,9 +42,22 @@ namespace SimpleCalculator
                 Match match1 = r2.Match(input);
                 if (match1.Success)
                 {
-                    string charEntered = match1.Groups[1].Value;
-                    string valEntered = match1.Groups[2].Value;
+                    char charEntered = Convert.ToChar(match1.Groups[1].Value);
+                    int valEntered = Convert.ToInt32(match1.Groups[2].Value);
                     Console.WriteLine($"charEntered={charEntered} valEntered={valEntered}");
+                    StoredConstants.StoredConstants constants = new StoredConstants.StoredConstants();
+                    constants.AddConstantsToDictionary();
+    
+                    if (constants.IsValueInDictionary(charEntered))
+                    {
+                        Console.WriteLine("this already exists");
+                    }
+                    else
+                    {
+                        constants.AddConstantsToDictionary('q', 100);                      
+                        Console.WriteLine("Value added to dictionary");
+                    }
+
                 }
 
                 if (match.Success)

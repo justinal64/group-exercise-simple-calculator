@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="StoredConstantsTests\StoredConstantsTest.cs" />
     <Compile Include="Operations.Tests\AddTest.cs" />
     <Compile Include="Operations.Tests\DivideTest.cs" />
     <Compile Include="Operations.Tests\ModulusTest.cs" />
