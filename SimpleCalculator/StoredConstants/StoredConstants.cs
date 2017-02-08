@@ -49,7 +49,7 @@ namespace SimpleCalculator.StoredConstants
             if(constantDictionary.ContainsKey(key))
                 Console.WriteLine($"The Value of {key} is {constantDictionary[key]}");
             else
-                Console.WriteLine("Sorry that value is not in the Dictionary");
+                Console.WriteLine("That variable is not defined yet.");
         }
     }
 }
