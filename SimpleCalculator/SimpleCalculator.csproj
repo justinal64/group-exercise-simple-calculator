@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="StoredConstants\StoredConstants.cs" />
     <Compile Include="EquationConverter.cs" />
     <Compile Include="Operations\AddNumber.cs" />
     <Compile Include="Operations\DivideNumber.cs" />
