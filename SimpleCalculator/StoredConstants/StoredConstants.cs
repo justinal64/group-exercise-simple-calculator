@@ -19,8 +19,19 @@ namespace SimpleCalculator.StoredConstants
 
         public void AddConstantsToDictionary(char userKey, int userValue)
         {
-            //constantDictionary.Add('d', 100);
-            constantDictionary.Add(userKey, userValue);
+            /* a side effect of using the .Add method is that it throws an error 
+             if the key already exists, so we don't need a seperate method  
+             checking if the key exist
+             */
+            try
+            {
+                constantDictionary.Add(userKey, userValue);
+                Console.WriteLine($"{userKey} = {userValue} added to the dictionary!");
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Sorry that variable already exists");
+            }
         }
 
         public bool IsValueInDictionary(char inDictionary)
@@ -35,9 +46,18 @@ namespace SimpleCalculator.StoredConstants
             }
         }
 
-        public void AddValueToDictionary()
+        public string GetValueFromDictionary(char key)
         {
-
+            if(constantDictionary.ContainsKey(key))
+            {
+                //string value = constantDictionary[key];
+                Console.WriteLine($"The Value of {key} is {constantDictionary[key]}");
+            }
+            else
+            {
+                Console.WriteLine("Sorry that value is not in the Dictionary");
+            }
+            return "Test";
         }
 
 
